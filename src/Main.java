@@ -61,7 +61,7 @@ public class Main {
                                     else {
 
                                         if (cell.isStudentRegistrations()) {
-                                            if (studentArrayListt.get(i).isRegistered == true) {
+                                            if (studentArrayListt.get(i).isRegistered) {
                                                 System.out.println("You are already registered!");
                                             } else {
                                                 studentArrayListt.get(i).isRegistered = true;
@@ -110,8 +110,8 @@ public class Main {
                                     }
                                 } else if (choice3==3) {
                                     System.out.println("All available companies are:");
-                                    for(int j=0;j<companyArrayListt.size();j++){
-                                        System.out.println((i+1)+". "+companyArrayListt.get(j).getName());
+                                    for (Company company : companyArrayListt) {
+                                        System.out.println((i + 1) + ". " + company.getName());
                                     }
                                 } else if (choice3==4) {
                                     if(studentArrayListt.get(i).getOfferBy()!=null){
@@ -257,8 +257,8 @@ public class Main {
                         for(int j=0;j<studentArrayListt.size();j++){
                             if(studentArrayListt.get(j).getRollNo()==stroll){
                                 targetStudent=j;
+                                break;
                             }
-                            break;
                         }
                         companyArrayListt.get(targetcompany).setSelectedStudent(studentArrayListt.get(targetStudent).getName());
                         companyArrayListt.get(targetcompany).setSelectedStudentBranch(studentArrayListt.get(targetStudent).getBranch());

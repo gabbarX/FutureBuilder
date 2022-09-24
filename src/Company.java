@@ -2,8 +2,23 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Company {
+    private ArrayList<String> offeredStudentsList = new ArrayList<>();
+    private ArrayList<String> results = new ArrayList<>();
     String name;
     String role;
+
+    public void setResults(ArrayList<String> results) {
+        this.results = results;
+    }
+
+    public ArrayList<String> getOfferedStudentsList() {
+        return offeredStudentsList;
+    }
+
+    public void setOfferedStudentsList(ArrayList<String> offeredStudentsList) {
+        this.offeredStudentsList = offeredStudentsList;
+    }
+
     float ctc;
     float mincgpa;
     String selectedStudent;
@@ -11,7 +26,7 @@ public class Company {
     int selectedStudentRollNumber=0;
     boolean registeredForDrive;
     String registrationTime;
-    public static ArrayList<Integer> regStudentRollnumber = new ArrayList<>();
+    public ArrayList<Integer> regStudentRollnumber = new ArrayList<>();
 
     public void setRegistrationTime(String registrationTime) {
         this.registrationTime = registrationTime;
@@ -33,16 +48,20 @@ public class Company {
         this.selectedStudentBranch = selectedStudentBranch;
     }
 
-    public static void setRegStudentRollnumber(ArrayList<Integer> regStudentRollnumber) {
-        Company.regStudentRollnumber = regStudentRollnumber;
+    public String getSelectedStudent() {
+        return selectedStudent;
     }
 
-    public void setSelectedStudentRollNumber(int selectedStudentRollNumber) {
-        this.selectedStudentRollNumber = selectedStudentRollNumber;
+    public String getSelectedStudentBranch() {
+        return selectedStudentBranch;
     }
 
-    public static ArrayList<Integer> getRegStudentRollnumber() {
+    public ArrayList<Integer> getRegStudentRollnumber() {
         return regStudentRollnumber;
+    }
+
+    public void setRegStudentRollnumber(ArrayList<Integer> regStudentRollnumber) {
+        this.regStudentRollnumber = regStudentRollnumber;
     }
 
     public int getSelectedStudentRollNumber() {

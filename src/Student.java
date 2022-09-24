@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 
 public class Student {
+
+    public ArrayList<String> regCompanies = new ArrayList<>();
+    private ArrayList<String> appliedFor = new ArrayList<>();
+    static float money=0;
     String name;
     int rollNo;
     float cgpa;
@@ -14,6 +18,7 @@ public class Student {
     boolean isBlocked = false;
 
     boolean isPlaced=false;
+    boolean isOffered=false;
     boolean isRegistered=false;
 
     public int getOfferNumber() {
@@ -21,8 +26,16 @@ public class Student {
     }
 
 
+    public ArrayList<String> getAppliedFor() {
+        return appliedFor;
+    }
+
+    public void setAppliedFor(String company) {
+        this.appliedFor.add(company);
+    }
+
     public void checkBlock(){
-        if(!this.isPlaced && offerNumber==offersrejected && offerNumber>0 && offersrejected>0){
+        if(!this.isOffered && offerNumber==offersrejected && offerNumber>0 && offersrejected>0){
             this.isBlocked=true;
         }
     }
@@ -67,6 +80,10 @@ public class Student {
         return placedIn;
     }
 
+    public void setOffered(boolean offered) {
+        this.isOffered = offered;
+    }
+
     public boolean isPlaced() {
         return isPlaced;
     }
@@ -76,7 +93,7 @@ public class Student {
     }
 
     public void setRegistered(boolean registered) {
-        isRegistered = registered;
+        this.isRegistered = registered;
     }
 
     public boolean isBlocked() {
@@ -84,7 +101,7 @@ public class Student {
     }
 
     public void setBlocked(boolean blocked) {
-        isBlocked = blocked;
+        this.isBlocked = blocked;
     }
 
     public ArrayList<String> getRegCompanies() {
@@ -96,14 +113,12 @@ public class Student {
     }
 
     public void setOfferrejected() {
-        this.offersrejected = offersrejected+1;
+        this.offersrejected = this.offersrejected+1;
     }
 
     public int getOffersrejected() {
         return offersrejected;
     }
-
-    public ArrayList<String> regCompanies = new ArrayList<>();
 
     public void setPlacedIn(String placedIn) {
         this.placedIn = placedIn;
@@ -114,7 +129,7 @@ public class Student {
     }
 
     public void setPlaced(boolean placed) {
-        isPlaced = placed;
+        this.isPlaced = placed;
     }
 
     public void setCurrentPackage(float currentPackage) {

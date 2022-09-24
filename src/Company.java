@@ -1,14 +1,62 @@
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Company {
     String name;
     String role;
     float ctc;
     float mincgpa;
+    String selectedStudent;
+    String selectedStudentBranch;
+    int selectedStudentRollNumber=0;
+    boolean registeredForDrive;
+    String registrationTime;
+    public static ArrayList<Integer> regStudentRollnumber = new ArrayList<>();
+
+    public void setRegistrationTime(String registrationTime) {
+        this.registrationTime = registrationTime;
+    }
+    public int selectStudent(){
+        Random rand = new Random();
+        int ridx = rand.nextInt(this.regStudentRollnumber.size());
+        selectedStudentRollNumber = regStudentRollnumber.get(ridx);
+        return selectedStudentRollNumber;
+    }
+    public String getRegistrationTime() {
+        return registrationTime;
+    }
+    public void setSelectedStudent(String selectedStudent) {
+        this.selectedStudent = selectedStudent;
+    }
+
+    public void setSelectedStudentBranch(String selectedStudentBranch) {
+        this.selectedStudentBranch = selectedStudentBranch;
+    }
+
+    public static void setRegStudentRollnumber(ArrayList<Integer> regStudentRollnumber) {
+        Company.regStudentRollnumber = regStudentRollnumber;
+    }
+
+    public void setSelectedStudentRollNumber(int selectedStudentRollNumber) {
+        this.selectedStudentRollNumber = selectedStudentRollNumber;
+    }
+
+    public static ArrayList<Integer> getRegStudentRollnumber() {
+        return regStudentRollnumber;
+    }
+
+    public int getSelectedStudentRollNumber() {
+        return selectedStudentRollNumber;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public void setCtc(float ctc) {
         this.ctc = ctc;
     }
 
-    boolean registeredForDrive;
 
     public String getName() {
         return name;

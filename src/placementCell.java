@@ -17,6 +17,10 @@ public class placementCell {
         this.companyRegistrationOT = companyRegistrationOT;
     }
 
+    public float updateCgpa(float cgpa){
+        return cgpa;
+    }
+
     public String getCompanyRegistrationCT() {
         return companyRegistrationCT;
     }

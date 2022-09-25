@@ -4,30 +4,30 @@ import java.util.Random;
 public class Company {
     private ArrayList<String> offeredStudentsList = new ArrayList<>();
     private ArrayList<String> results = new ArrayList<>();
-    String name;
-    String role;
+    private ArrayList<Integer> regStudentRollnumber = new ArrayList<>();
+    private String name;
+    private String role;
+    private float ctc;
+    private float mincgpa;
+    private String selectedStudent;
+    private String selectedStudentBranch;
+    private int selectedStudentRollNumber=0;
+    private boolean registeredForDrive;
+    private String registrationTime;
 
-    public void setResults(ArrayList<String> results) {
-        this.results = results;
+    public ArrayList<String> getResults() {
+        return results;
     }
+    public void setResults(String student) {
 
+        this.results.add(student);
+    }
     public ArrayList<String> getOfferedStudentsList() {
         return offeredStudentsList;
     }
-
-    public void setOfferedStudentsList(ArrayList<String> offeredStudentsList) {
-        this.offeredStudentsList = offeredStudentsList;
+    public void setOfferedStudentsList(String student) {
+        this.offeredStudentsList.add(student);
     }
-
-    float ctc;
-    float mincgpa;
-    String selectedStudent;
-    String selectedStudentBranch;
-    int selectedStudentRollNumber=0;
-    boolean registeredForDrive;
-    String registrationTime;
-    public ArrayList<Integer> regStudentRollnumber = new ArrayList<>();
-
     public void setRegistrationTime(String registrationTime) {
         this.registrationTime = registrationTime;
     }
@@ -41,42 +41,25 @@ public class Company {
         return registrationTime;
     }
     public void setSelectedStudent(String selectedStudent) {
-        this.selectedStudent = selectedStudent;
-    }
 
+        this.selectedStudent = selectedStudent;
+        this.offeredStudentsList.add(selectedStudent);
+    }
     public void setSelectedStudentBranch(String selectedStudentBranch) {
         this.selectedStudentBranch = selectedStudentBranch;
     }
-
-    public String getSelectedStudent() {
-        return selectedStudent;
+    public void setRegStudentRollnumber(int rollnumber) {
+        this.regStudentRollnumber.add(rollnumber);
     }
-
-    public String getSelectedStudentBranch() {
-        return selectedStudentBranch;
-    }
-
-    public ArrayList<Integer> getRegStudentRollnumber() {
-        return regStudentRollnumber;
-    }
-
-    public void setRegStudentRollnumber(ArrayList<Integer> regStudentRollnumber) {
-        this.regStudentRollnumber = regStudentRollnumber;
-    }
-
     public int getSelectedStudentRollNumber() {
         return selectedStudentRollNumber;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public void setCtc(float ctc) {
         this.ctc = ctc;
     }
-
-
     public String getName() {
         return name;
     }
